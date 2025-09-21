@@ -1,19 +1,249 @@
 <!DOCTYPE html>
-<html>
+<html lang="fi">
 <head>
-    <title>Parturikampaamo Aurora</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aurorakampaamo</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      background: #fff;
+      color: #111;
+    }
+
+    header {
+      background: black;
+      color: #d4af37; /* gold */
+      padding: 30px;
+      text-align: center;
+      font-family: 'Georgia', serif;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin: 0;
+      letter-spacing: 2px;
+    }
+
+    header p {
+      color: white;
+      font-size: 1.2rem;
+    }
+
+    nav {
+      background: #111;
+      padding: 12px;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    nav a {
+      color: #d4af37;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: white;
+    }
+
+    section {
+      padding: 50px 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    h2 {
+      color: black;
+      border-bottom: 2px solid #d4af37;
+      display: inline-block;
+      margin-bottom: 20px;
+    }
+
+    .card {
+      background: #f8f8f8;
+      border-left: 5px solid #d4af37;
+      padding: 15px;
+      margin: 10px 0;
+      border-radius: 8px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 15px;
+    }
+
+    input, textarea {
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      width: 100%;
+      font-size: 1rem;
+    }
+
+    button {
+      background: #d4af37;
+      color: black;
+      border: none;
+      padding: 12px;
+      cursor: pointer;
+      font-weight: bold;
+      border-radius: 5px;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: black;
+      color: #d4af37;
+    }
+
+    footer {
+      background: black;
+      color: #d4af37;
+      text-align: center;
+      padding: 20px;
+      margin-top: 20px;
+    }
+
+    /* Логотип */
+    .logo {
+      font-size: 2.2rem;
+      font-weight: bold;
+      color: #d4af37;
+      text-shadow: 2px 2px 5px rgba(255,255,255,0.2);
+    }
+    .logo span {
+      color: white;
+    }
+    .gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.gallery img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border: 3px solid #d4af37;
+  border-radius: 10px;
+  transition: transform 0.3s, filter 0.3s;
+  filter: grayscale(100%);
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+  filter: grayscale(0%);
+}
+  </style>
 </head>
 <body>
-    
-    <p><a href="Etusivu">"</a></p>
-    <p><a href="Palvelut">"</a></p>
-    <p><a href="Yhteystiedot">"</a></p>
+  <header>
+    <div class="logo">Aurora<span>kampaamo</span> ✨</div>
+    <p>Kauneutta ja tyyliä jokaiselle</p>
+  </header>
 
-    <h1>Palvelut</h1>
-    
-    <p>hiustenleikkuu</p>
-    <p>värjäys</p>
-    <p>kampaus</p>
-    <p>moniväri ja leikkaus (lyhyt)</p>
+  <nav>
+    <a href="#etusivu">Etusivu</a>
+    <a href="#palvelut">Palvelut</a>
+    <a href="#hinnasto">Hinnasto</a>
+    <a href="#yhteystiedot">Yhteystiedot</a>
+    <a href="#varaus">Varaa aika</a>
+  </nav>
+
+  <section id="etusivu">
+    <h2>Tervetuloa</h2>
+  </section>
+
+  <section id="palvelut">
+    <h2>Palvelut</h2>
+    <div class="card">Hiusten leikkaus</div>
+    <div class="card">Kampausten teko</div>
+    <div class="card">Värjäys ja raidat</div>
+    <div class="card">Parturipalvelut</div>
+  </section>
+
+  <section id="hinnasto">
+    <h2>Hinnasto</h2>
+    <div class="card">Hiusten leikkaus – 35 €</div>
+    <div class="card">Värjäys – alkaen 70 €</div>
+    <div class="card">Kampausten teko – 50 €</div>
+    <div class="card">Parturi – 25 €</div>
+  </section>
+
+  <section id="yhteystiedot">
+    <h2>Yhteystiedot</h2>
+    <p>📍 Lahtikeskus 20, Lahti</p>
+    <p>📞 +358 40 123 4567</p>
+    <p>✉ info@aurorakampaamo.fi</p>
+
+    <h3>Ota yhteyttä</h3>
+    <form id="contactForm">
+      <input type="text" id="name" placeholder="Nimi" required>
+      <input type="email" id="email" placeholder="Sähköposti" required>
+      <textarea id="message" rows="5" placeholder="Viesti" required></textarea>
+      <button type="submit">Lähetä</button>
+    </form>
+    <p id="formMessage"></p>
+  </section>
+
+  <section id="varaus">
+    <h2>Varaa aika</h2>
+    <form id="bookingForm">
+      <input type="text" id="customerName" placeholder="Nimi" required>
+      <input type="email" id="customerEmail" placeholder="Sähköposti" required>
+      <label for="date">Päivämäärä:</label>
+      <input type="date" id="date" required>
+      <label for="time">Aika:</label>
+      <input type="time" id="time" required>
+      <button type="submit">Varaa</button>
+    </form>
+    <p id="bookingMessage"></p>
+  </section>
+<section id="galleria">
+  <h2>Galleria</h2>
+  <div class="gallery">
+    <img src="https://www.studioak.fi/wp-content/uploads/2025/03/Blogi_trendit_glasshair_Arita.webp" alt="Kampaamo kuva 1">
+    <img src="https://i.pinimg.com/originals/e2/af/7c/e2af7c2995087fb2e3ae5d698845a2ff.jpg" alt="Kampaamo kuva 2">
+    <img src="https://www.studioak.fi/wp-content/uploads/2025/03/Blogi_trendit_lyhyethiukset_luonnollinen_Salla.webp" alt="Kampaamo kuva 3">
+    <img src="https://i.pinimg.com/236x/d9/0d/c5/d90dc5898725a89435c92a294c29c88a.jpg" alt="Kampaamo kuva 4">
+    <img src="https://www.studioak.fi/wp-content/uploads/2025/03/Blogi_trendit_lyhyethiukset_Salla_1.webp" alt="Kampaamo kuva 5">
+    <img src="https://i.pinimg.com/originals/ce/68/e9/ce68e9e45479ad11122dda35ae8fc9bf.jpg" alt="Kampaamo kuva 6">
+  </div>
+</section>
+  <footer>
+    <p>&copy; 2025 Aurorakampaamo</p>
+  </footer>
+
+  <script>
+    // Yhteydenottolomake
+    document.getElementById("contactForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+      document.getElementById("formMessage").textContent = 
+        "Kiitos viestistäsi! Otamme sinuun yhteyttä pian.";
+      this.reset();
+    });
+
+    // Varauslomake
+    document.getElementById("bookingForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+      const name = document.getElementById("customerName").value;
+      const email = document.getElementById("customerEmail").value;
+      const date = document.getElementById("date").value;
+      const time = document.getElementById("time").value;
+
+      document.getElementById("bookingMessage").textContent = 
+        `Kiitos ${name}, varauksesi ${date} klo ${time} vastaanotettu! Vahvistus lähetetään sähköpostiin: ${email}`;
+      
+      this.reset();
+    });
+  </script>
 </body>
 </html>
